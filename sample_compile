@@ -1,0 +1,1 @@
+g++ -O5 ./nb-2017.cpp -lm -lgmp -lntl -lpthread -L/home/dthomson/NTL/lib -L/home/dthomson/GMP/lib -I/home/dthomson/NTL/include

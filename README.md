@@ -1,5 +1,5 @@
 # exh_normal
-Version 0.0.0
+Version 0.1.0
 
 Exhaustive search of GF(2^n) over GF(2) for normal bases of low complexity
 
@@ -21,9 +21,9 @@ To run the entire search on a single thread, use
   ./foo <n> 1 1 0
 ```
 
-To run the search for n=34 on 2 cores/threads using 100 Tasks on a single node and store the output of each task to the file 34-\<task index\>-of-100, use:
+To run the search for n=34 on 20 cores/threads using 100 Tasks on a single node and store the output of each task to the file 34-\<task index\>-of-100, use:
 ```
-  for i in {0..99}; do ./foo 34 2 100 ${i} >>34-${i}-of-100; done
+  for i in {0..99}; do ./foo 34 20 100 ${i} >>34-${i}-of-100; done
 ```
 
 ### Prerequisites
@@ -47,13 +47,13 @@ If NTL is installed with GMP back-end, then ensure the -lgmp flag is passed (and
 ### Profiling
 We recommend using the [gperftools](https://github.com/gperftools) (originally Google Performance Tools) for profiling. Once gperftools is installed, simply add the
 ```
-  -g
+  -pg
 ```
 flag and the
 ```
   -lprofiler
 ```
-linker flag to your compile line. See the documentation [here](https://github.com/gperftools/gperftools) for more information. Note that linking the profiler does not incur a performance hit (aside from passing the -g flag, which downgrades compiler optimizations) unless the environment variable $CPUPROFILE is set.
+linker flag to your compile line. See the documentation [here](https://github.com/gperftools/gperftools) for more information. Note that linking the profiler does not incur a performance hit unless the environment variable $CPUPROFILE is set.
 
 ## Contributing
 All contributions, comments and suggestions welcome!
@@ -64,7 +64,7 @@ All contributions, comments and suggestions welcome!
 * David Thomson (Carleton University) - **Main developer**
 
 ## License and Disclaimer
-Coming soon.
+This code is provided free for use and modification, provided correct attribution is provided.
 
 The original authors do not hold any responsibilty for the use of this code or any of its derivatives.
 
